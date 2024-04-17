@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var pixels = Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            ForEach(0 ..< 8, id: \.self) { row in
+                HStack {
+                    ForEach(0 ..< 8, id: \.self) { index in
+                        pixels[row][index]
+                            .onTapGesture {
+                                pixels[row][index] = .red
+                            }
+                    }
+                }
+            }
         }
+        .aspectRatio(1, contentMode: .fit)
         .padding()
     }
 }
