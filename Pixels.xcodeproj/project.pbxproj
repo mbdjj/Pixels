@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		348A819D2BCF7D7A000B4001 /* PixelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348A819C2BCF7D7A000B4001 /* PixelsApp.swift */; };
-		348A819F2BCF7D7A000B4001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348A819E2BCF7D7A000B4001 /* ContentView.swift */; };
+		348A819F2BCF7D7A000B4001 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348A819E2BCF7D7A000B4001 /* Canvas.swift */; };
 		348A81A12BCF7D7B000B4001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348A81A02BCF7D7B000B4001 /* Assets.xcassets */; };
 		348A81A42BCF7D7B000B4001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348A81A32BCF7D7B000B4001 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		348A81992BCF7D7A000B4001 /* Pixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348A819C2BCF7D7A000B4001 /* PixelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelsApp.swift; sourceTree = "<group>"; };
-		348A819E2BCF7D7A000B4001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		348A819E2BCF7D7A000B4001 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		348A81A02BCF7D7B000B4001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348A81A32BCF7D7B000B4001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				348A819C2BCF7D7A000B4001 /* PixelsApp.swift */,
-				348A819E2BCF7D7A000B4001 /* ContentView.swift */,
+				348A819E2BCF7D7A000B4001 /* Canvas.swift */,
 				348A81A02BCF7D7B000B4001 /* Assets.xcassets */,
 				348A81A22BCF7D7B000B4001 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348A819F2BCF7D7A000B4001 /* ContentView.swift in Sources */,
+				348A819F2BCF7D7A000B4001 /* Canvas.swift in Sources */,
 				348A819D2BCF7D7A000B4001 /* PixelsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
