@@ -12,9 +12,9 @@ struct ContentView: View {
     @State var pixels = Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ForEach(0 ..< 8, id: \.self) { row in
-                HStack {
+                HStack(spacing: 0) {
                     ForEach(0 ..< 8, id: \.self) { index in
                         pixels[row][index]
                             .onTapGesture {
