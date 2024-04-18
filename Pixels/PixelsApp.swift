@@ -11,7 +11,7 @@ import SwiftUI
 struct PixelsApp: App {
     var body: some Scene {
         WindowGroup {
-            Canvas(height: 8, width: 8)
+            DrawingView()
         }
     }
 }

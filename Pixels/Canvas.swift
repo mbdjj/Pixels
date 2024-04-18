@@ -9,22 +9,17 @@ import SwiftUI
 
 struct Canvas: View {
     
-    @State var pixels: [[Color]]
+    @Binding var pixels: [[Color]]
     
     let height: Int
     let width: Int
     
-    init(height: Int, width: Int) {
-        self.height = height
-        self.width = width
-        
-        self.pixels = Array(repeating: Array(repeating: Color.blue, count: width), count: height)
-    }
+    let showMesh: Bool = false
     
     var body: some View {
-        VStack(spacing: 1) {
+        VStack(spacing: showMesh ? 1 : 0) {
             ForEach(0 ..< height, id: \.self) { row in
-                HStack(spacing: 1) {
+                HStack(spacing: showMesh ? 1 : 0) {
                     ForEach(0 ..< width, id: \.self) { index in
                         pixels[row][index]
                             .aspectRatio(1, contentMode: .fit)
@@ -50,10 +45,9 @@ struct Canvas: View {
             }
         }
         .border(Color.black, width: 4)
-        .padding()
     }
 }
 
 #Preview {
-    Canvas(height: 16, width: 16)
+    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), height: 8, width: 8)
 }
