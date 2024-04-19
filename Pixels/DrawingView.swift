@@ -12,10 +12,25 @@ struct DrawingView: View {
     
     var body: some View {
         VStack {
-            Canvas(pixels: $model.pixels, height: model.height, width: model.width)
+            HStack {
+                Spacer()
+                Button("Clear") {
+                    withAnimation {
+                        model.pixels = Array(repeating: Array(repeating: Color.clear, count: model.width), count: model.height)
+                    }
+                }
+                .padding(.horizontal)
+            }
+            
+            Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, height: model.height, width: model.width)
                 .padding()
             
             Spacer()
+            
+            HStack {
+                ColorSquarePicker(colorValue: $model.selectedColor)
+            }
+            .padding()
         }
     }
 }

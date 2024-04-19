@@ -12,6 +12,7 @@ import SwiftUI
     let width: Int
     
     var pixels: [[Color]]
+    var selectedColor: Color = .black
     
     init(height: Int, width: Int) {
         self.height = height

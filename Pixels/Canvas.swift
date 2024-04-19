@@ -10,6 +10,7 @@ import SwiftUI
 struct Canvas: View {
     
     @Binding var pixels: [[Color]]
+    @Binding var selectedColor: Color
     
     let height: Int
     let width: Int
@@ -38,7 +39,7 @@ struct Canvas: View {
                                 let y = floor(location.y / proxy.size.height * Double(height))
                                 
                                 if x >= 0 && x < Double(width) && y >= 0 && y < Double(height) {
-                                    pixels[Int(y)][Int(x)] = .red
+                                    pixels[Int(y)][Int(x)] = selectedColor
                                 }
                             }
                     )
@@ -49,5 +50,5 @@ struct Canvas: View {
 }
 
 #Preview {
-    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), height: 8, width: 8)
+    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), height: 8, width: 8)
 }
