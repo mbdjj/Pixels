@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DrawingView: View {
-    
     @State var model: DrawingViewModel
     
     init() {
@@ -22,6 +21,10 @@ struct DrawingView: View {
                 Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, height: model.height, width: model.width)
                     .padding()
                 
+                Spacer()
+                if let image = UIImage(pixels: model.upscaledPixels(), width: model.picSize, height: model.picSize) {
+                    ShareLink(item: image, preview: SharePreview("Pixels Image", image: image))
+                }
                 Spacer()
                 
                 HStack(spacing: 0) {
