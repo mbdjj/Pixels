@@ -18,6 +18,7 @@ import SwiftUI
     var lastUsed: [Color] = [.black]
     
     let picSize: Int = 1024
+    var imagePixels: [Pixel]? = nil
     
     init(height: Int, width: Int, screenWidth: CGFloat) {
         self.height = height

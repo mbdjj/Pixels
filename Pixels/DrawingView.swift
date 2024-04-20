@@ -22,9 +22,13 @@ struct DrawingView: View {
                     .padding()
                 
                 Spacer()
-                if let image = UIImage(pixels: model.upscaledPixels(), width: model.picSize, height: model.picSize) {
-                    ShareLink(item: image, preview: SharePreview("Pixels Image", image: image))
+                Button {
+                    model.imagePixels = model.upscaledPixels()
+                } label: {
+                    Label("Generate Image", systemImage: "photo")
                 }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
                 Spacer()
                 
                 HStack(spacing: 0) {
@@ -58,6 +62,16 @@ struct DrawingView: View {
                 }
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
+            }
+            .navigationDestination(item: $model.imagePixels) { array in
+                VStack {
+                    if let image = UIImage(pixels: array, width: model.picSize, height: model.picSize) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                        ShareLink(item: image, preview: SharePreview("Pixels Image", image: image))
+                    }
+                }
             }
         }
     }

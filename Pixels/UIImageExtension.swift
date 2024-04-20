@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Pixel {
+struct Pixel: Hashable {
     var a: UInt8
     var r: UInt8
     var g: UInt8
