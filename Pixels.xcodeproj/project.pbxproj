@@ -14,6 +14,8 @@
 		348A819F2BCF7D7A000B4001 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348A819E2BCF7D7A000B4001 /* Canvas.swift */; };
 		348A81A12BCF7D7B000B4001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348A81A02BCF7D7B000B4001 /* Assets.xcassets */; };
 		348A81A42BCF7D7B000B4001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348A81A32BCF7D7B000B4001 /* Preview Assets.xcassets */; };
+		34A62C3A2BD3A0EA00F62A71 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A62C392BD3A0EA00F62A71 /* ArrayExtension.swift */; };
+		34A62C3C2BD3A10500F62A71 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A62C3B2BD3A10500F62A71 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		348A819E2BCF7D7A000B4001 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		348A81A02BCF7D7B000B4001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348A81A32BCF7D7B000B4001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34A62C392BD3A0EA00F62A71 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		34A62C3B2BD3A10500F62A71 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				3423C0A22BD1231F0069DD6F /* DrawingView.swift */,
 				3423C0A42BD123810069DD6F /* DrawingViewModel.swift */,
 				3423C0A62BD129B40069DD6F /* ColorSquarePicker.swift */,
+				34A62C392BD3A0EA00F62A71 /* ArrayExtension.swift */,
+				34A62C3B2BD3A10500F62A71 /* ColorExtension.swift */,
 				348A81A02BCF7D7B000B4001 /* Assets.xcassets */,
 				348A81A22BCF7D7B000B4001 /* Preview Content */,
 			);
@@ -149,7 +155,9 @@
 				3423C0A32BD1231F0069DD6F /* DrawingView.swift in Sources */,
 				3423C0A52BD123810069DD6F /* DrawingViewModel.swift in Sources */,
 				348A819F2BCF7D7A000B4001 /* Canvas.swift in Sources */,
+				34A62C3A2BD3A0EA00F62A71 /* ArrayExtension.swift in Sources */,
 				3423C0A72BD129B40069DD6F /* ColorSquarePicker.swift in Sources */,
+				34A62C3C2BD3A10500F62A71 /* ColorExtension.swift in Sources */,
 				348A819D2BCF7D7A000B4001 /* PixelsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

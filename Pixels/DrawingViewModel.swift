@@ -14,10 +14,15 @@ import SwiftUI
     var pixels: [[Color]]
     var selectedColor: Color = .black
     
-    init(height: Int, width: Int) {
+    var amount: Int
+    var lastUsed: [Color] = [.black]
+    
+    init(height: Int, width: Int, screenWidth: CGFloat) {
         self.height = height
         self.width = width
         
         self.pixels = Array(repeating: Array(repeating: Color.clear, count: width), count: height)
+        let amount = Int(floor((screenWidth - 32) / 40)) - 1
+        self.amount = amount
     }
 }
