@@ -69,7 +69,8 @@ struct DrawingView: View {
             }
             .navigationDestination(item: $model.imagePixels) { array in
                 VStack {
-                    if let image = UIImage(pixels: array, width: model.picSize, height: model.picSize) {
+                    let size = model.picSize == 0 ? model.width : model.picSize
+                    if let image = UIImage(pixels: array, width: size, height: size) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)

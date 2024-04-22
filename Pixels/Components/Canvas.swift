@@ -22,8 +22,14 @@ struct Canvas: View {
             ForEach(0 ..< height, id: \.self) { row in
                 HStack(spacing: showMesh ? 1 : 0) {
                     ForEach(0 ..< width, id: \.self) { index in
-                        pixels[row][index]
-                            .aspectRatio(1, contentMode: .fit)
+                        if pixels[row][index] != .clear {
+                            pixels[row][index]
+                                .aspectRatio(1, contentMode: .fit)
+                        } else {
+                            Image(.clear)
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fit)
+                        }
                     }
                 }
             }
@@ -45,10 +51,12 @@ struct Canvas: View {
                     )
             }
         }
+        .background(Color.primary)
+        .padding(4)
         .border(Color.primary, width: 4)
     }
 }
 
 #Preview {
-    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), width: 8, height: 8, showMesh: .constant(false))
+    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.clear, count: 8), count: 8)), selectedColor: .constant(Color.black), width: 8, height: 8, showMesh: .constant(true))
 }
