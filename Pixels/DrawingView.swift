@@ -69,6 +69,7 @@ struct DrawingView: View {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
+                            .draggable(image)
                         ShareLink(item: image, preview: SharePreview("Pixels Image", image: image))
                     }
                 }

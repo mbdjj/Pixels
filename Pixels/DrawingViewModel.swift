@@ -31,7 +31,7 @@ import SwiftUI
     
     func upscaledPixels() -> [Pixel] {
         var pixels = self.pixels.map { $0.map { color in Pixel(from: color) } }
-        for iteration in 0 ..< Int(log2(Double(picSize / width))) {
+        for _ in 0 ..< Int(log2(Double(picSize / width))) {
             var iterationPixels = [[Pixel]]()
             for i in 0 ..< pixels.count {
                 iterationPixels.append([Pixel]())

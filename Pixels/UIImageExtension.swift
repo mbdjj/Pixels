@@ -57,7 +57,6 @@ extension UIImage: Transferable {
             if let pngData = image.pngData() {
                 return pngData
             } else {
-                // Handle the case where UIImage could not be converted to png.
                 throw ConversionError.failedToConvertToPNG
             }
         }
