@@ -15,7 +15,7 @@ struct Canvas: View {
     let width: Int
     let height: Int
     
-    let showMesh: Bool = false
+    @Binding var showMesh: Bool
     
     var body: some View {
         VStack(spacing: showMesh ? 1 : 0) {
@@ -50,5 +50,5 @@ struct Canvas: View {
 }
 
 #Preview {
-    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), width: 8, height: 8)
+    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), width: 8, height: 8, showMesh: .constant(false))
 }

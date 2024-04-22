@@ -19,7 +19,7 @@ struct DrawingView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, width: model.width, height: model.height)
+                Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, width: model.width, height: model.height, showMesh: $showGrid)
                     .padding()
                 
                 Spacer()
