@@ -44,6 +44,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		348784232BD6532500FFB686 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34A62C392BD3A0EA00F62A71 /* ArrayExtension.swift */,
+				34A62C3B2BD3A10500F62A71 /* ColorExtension.swift */,
+				34A62C3F2BD3AE5200F62A71 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		348784242BD6533600FFB686 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				348A819E2BCF7D7A000B4001 /* Canvas.swift */,
+				3423C0A62BD129B40069DD6F /* ColorSquarePicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		348784252BD6534A00FFB686 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3423C0A42BD123810069DD6F /* DrawingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		348784262BD6535300FFB686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3423C0A22BD1231F0069DD6F /* DrawingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		348A81902BCF7D7A000B4001 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				348A819C2BCF7D7A000B4001 /* PixelsApp.swift */,
-				348A819E2BCF7D7A000B4001 /* Canvas.swift */,
-				3423C0A22BD1231F0069DD6F /* DrawingView.swift */,
-				3423C0A42BD123810069DD6F /* DrawingViewModel.swift */,
-				3423C0A62BD129B40069DD6F /* ColorSquarePicker.swift */,
-				34A62C392BD3A0EA00F62A71 /* ArrayExtension.swift */,
-				34A62C3B2BD3A10500F62A71 /* ColorExtension.swift */,
-				34A62C3F2BD3AE5200F62A71 /* UIImageExtension.swift */,
+				348784262BD6535300FFB686 /* View */,
+				348784252BD6534A00FFB686 /* ViewModel */,
+				348784242BD6533600FFB686 /* Components */,
+				348784232BD6532500FFB686 /* Extensions */,
 				348A81A02BCF7D7B000B4001 /* Assets.xcassets */,
 				348A81A22BCF7D7B000B4001 /* Preview Content */,
 			);
