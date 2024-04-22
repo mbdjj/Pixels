@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct DrawingView: View {
-    @State var model: DrawingViewModel
+    @State var model: DrawingViewModel = DrawingViewModel(canvasSize: 8, pictureSize: 1024, useTransparency: true, screenWidth: 300)
     
-    init() {
-        let screenWidth: CGFloat = UIScreen.main.bounds.width
-        self.model = DrawingViewModel(height: 8, width: 8, screenWidth: screenWidth)
-    }
+    @AppStorage("showGrid") var showGrid: Bool = false
+    @AppStorage("useTransparency") var useTransparency: Bool = true
+    @AppStorage("canvasSize") var canvasSize: Int = 8
+    @AppStorage("pictureSize") var pictureSize: Int = 1024
+    var screenWidth: CGFloat { UIScreen.main.bounds.width }
     
     var body: some View {
         NavigationStack {
             VStack {
-                Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, height: model.height, width: model.width)
+                Canvas(pixels: $model.pixels, selectedColor: $model.selectedColor, width: model.width, height: model.height)
                     .padding()
                 
                 Spacer()
@@ -55,13 +56,16 @@ struct DrawingView: View {
                 .padding()
             }
             .toolbar {
-                Button("Clear") {
-                    withAnimation {
-                        model.pixels = Array(repeating: Array(repeating: Color.clear, count: model.width), count: model.height)
-                    }
+                Button("Clear", role: .destructive) {
+                    model = DrawingViewModel(canvasSize: canvasSize, pictureSize: pictureSize, useTransparency: useTransparency, screenWidth: screenWidth)
                 }
-                .buttonStyle(.bordered)
-                .buttonBorderShape(.capsule)
+                
+                
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "switch.2")
+                }
             }
             .navigationDestination(item: $model.imagePixels) { array in
                 VStack {
@@ -70,8 +74,17 @@ struct DrawingView: View {
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
                             .draggable(image)
+                            .padding()
                         ShareLink(item: image, preview: SharePreview("Pixels Image", image: image))
+                        Spacer()
                     }
+                }
+            }
+            .onAppear {
+                if canvasSize != model.width || useTransparency != model.useTransparency {
+                    model = DrawingViewModel(canvasSize: canvasSize, pictureSize: pictureSize, useTransparency: useTransparency, screenWidth: screenWidth)
+                } else if pictureSize != model.picSize {
+                    model.picSize = pictureSize
                 }
             }
         }

@@ -12,8 +12,8 @@ struct Canvas: View {
     @Binding var pixels: [[Color]]
     @Binding var selectedColor: Color
     
-    let height: Int
     let width: Int
+    let height: Int
     
     let showMesh: Bool = false
     
@@ -45,10 +45,10 @@ struct Canvas: View {
                     )
             }
         }
-        .border(Color.black, width: 4)
+        .border(Color.primary, width: 4)
     }
 }
 
 #Preview {
-    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), height: 8, width: 8)
+    Canvas(pixels: .constant(Array(repeating: Array(repeating: Color.blue, count: 8), count: 8)), selectedColor: .constant(Color.black), width: 8, height: 8)
 }
