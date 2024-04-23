@@ -39,6 +39,11 @@ struct SettingsView: View {
                 } label: {
                     Label("Canvas size", systemImage: "square.resize")
                 }
+                .onChange(of: canvasSize) { oldValue, newValue in
+                    if oldValue % 3 == 0 && newValue % 2 == 0 || oldValue % 2 == 0 && newValue % 3 == 0 {
+                        pictureSize = 0
+                    }
+                }
             }
             
             Section("Picture") {

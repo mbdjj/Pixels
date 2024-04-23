@@ -20,6 +20,9 @@ import SwiftUI
     
     var picSize: Int
     var imagePixels: [Pixel]? = nil
+    var previewSize: Int {
+        width % 2 == 0 ? 128 : 243
+    }
     
     init(canvasSize: Int, pictureSize: Int, useTransparency: Bool, screenWidth: CGFloat) {
         self.width = canvasSize
@@ -34,8 +37,9 @@ import SwiftUI
         self.picSize = pictureSize
     }
     
-    func upscaledPixels() -> [Pixel] {
+    func upscaledPixels(isPreview: Bool = false) -> [Pixel] {
         var pixels = self.pixels.map { $0.map { color in Pixel(from: color) } }
+        let picSize: Int = isPreview ? self.previewSize : self.picSize
         
         if picSize == 0 {
             return pixels.joined().map { $0 }
