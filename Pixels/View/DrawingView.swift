@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct DrawingView: View {
-    @State var model: DrawingViewModel = DrawingViewModel(canvasSize: 8, pictureSize: 1024, useTransparency: true, screenWidth: 300)
+    @State var model: DrawingViewModel = {
+        let screenWidth = UIScreen.main.bounds.width
+        return DrawingViewModel(canvasSize: 8, pictureSize: 1024, useTransparency: true, screenWidth: screenWidth)
+    }()
     
     @AppStorage("showGrid") var showGrid: Bool = false
     @AppStorage("useTransparency") var useTransparency: Bool = true
